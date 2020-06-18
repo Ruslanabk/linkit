@@ -12,13 +12,16 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 {
     use Authenticatable, Authorizable;
 
+    protected $attributes = [
+        'api_key' => '',
+    ];
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'username','email','password'
+        'username', 'email', 'password'
     ];
 
     /**
@@ -30,7 +33,8 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         'password',
     ];
 
-    public function link(){
-        return $this->hasMany('App\Link','user_id');
+    public function link()
+    {
+        return $this->hasMany('App\Link', 'user_id');
     }
 }
