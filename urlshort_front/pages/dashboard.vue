@@ -20,7 +20,7 @@
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn
-                  :href="`${process.env.backendUrl}/${$store.state.user.username}/${link.route}`"
+                  :href="`${backendUrl}/${$store.state.user.username}/${link.route}`"
                   target="_blank"
                   rel="noopener noreferrer"
                   color="green"
@@ -74,7 +74,8 @@ export default {
         route: "",
         url: "",
         description: ""
-      }
+      },
+      backendUrl: process.env.backendUrl,
     };
   },
   methods: {
