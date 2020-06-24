@@ -2,7 +2,7 @@
   <div class="d-flex justify-center">
     <v-card width="600" class="mt-6 pa-4">
       <v-card-title class="text-center blue-grey--text text--darken-2">
-        <v-icon class="mr-1" color="blue-grey darken-2">mdi-login</v-icon>Login
+        <v-icon class="mr-1" color="blue-grey darken-2">mdi-login</v-icon>Sign in
       </v-card-title>
       <v-card-text>
         <v-text-field v-model="user.email" label="Email" color="green accent-2" outlined></v-text-field>
