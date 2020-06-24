@@ -20,7 +20,7 @@
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn
-                  :href="`http://localhost:8000/${$store.state.user.username}/${link.route}`"
+                  :href="`${process.env.backendUrl}/${$store.state.user.username}/${link.route}`"
                   target="_blank"
                   rel="noopener noreferrer"
                   color="green"
@@ -81,7 +81,7 @@ export default {
     getLinks() {
       this.$axios({
         method: "get",
-        url: "http://localhost:8000/api/links",
+        url: process.env.backendUrl + "/api/links",
         headers: { Authorization: "Bearer " + this.$store.state.token }
       }).then(response => {
         this.$store.commit("setLinks", response.data.result);
@@ -90,7 +90,7 @@ export default {
     addLink() {
       this.$axios({
         method: "post",
-        url: "http://localhost:8000/api/links",
+        url: process.env.backendUrl + "/api/links",
         headers: { Authorization: "Bearer " + this.$store.state.token },
         data: this.newLink
       }).then(response => {
@@ -101,7 +101,7 @@ export default {
     delLink(id) {
       this.$axios({
         method: "delete",
-        url: "http://localhost:8000/api/links/" + id,
+        url: process.env.backendUrl + "/api/links/" + id,
         headers: { Authorization: "Bearer " + this.$store.state.token }
       }).then(response => {
         if (response.data.status == "success") {

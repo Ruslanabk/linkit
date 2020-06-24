@@ -27,7 +27,7 @@ export default {
     login(){
       this.$axios({
         method: 'post',
-        url: 'http://localhost:8000/api/login',
+        url: process.env.backendUrl + '/api/login',
         data: {
           email: this.user.email,
           password: this.user.password,

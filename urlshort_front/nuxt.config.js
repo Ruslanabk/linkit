@@ -83,5 +83,8 @@ export default {
   },
   router: {
     base: '/linkit/'
+  },
+  env: {
+    'backendUrl': 'http://188.225.47.187:8000'
   }
 }
